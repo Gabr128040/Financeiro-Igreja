@@ -23,6 +23,15 @@ INSTALLED_APPS = [
     'pdf_generator',
 ]
 
+INSTALLED_APPS += ["corsheaders"]
+
+MIDDLEWARE.insert(1, "corsheaders.middleware.CorsMiddleware")
+
+CORS_ALLOWED_ORIGINS = [
+    "https://financeiroidm.netlify.app/",  # Altere para o domínio real
+    "http://localhost:3000",
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -56,8 +65,12 @@ WSGI_APPLICATION = 'igreja_financeiro.wsgi.application'
 # Banco de dados (SQLite para desenvolvimento; use PostgreSQL em produção)
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'seu_banco',
+        'USER': 'seu_usuario',
+        'PASSWORD': 'sua_senha',
+        'HOST': 'seu_host',
+        'PORT': '5432',
     }
 }
 
