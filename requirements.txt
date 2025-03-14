@@ -1,3 +1,4 @@
 Django>=3.2
 djangorestframework
 reportlab
+gunicorn == 23.0.0
