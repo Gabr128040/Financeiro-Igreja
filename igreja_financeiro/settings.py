@@ -8,7 +8,7 @@ SECRET_KEY = 'your-secret-key'  # Altere para uma chave segura
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['financeiroidm.netlify.app/','financeiro-igreja.onrender.com','localhost']
 
 # Aplicações instaladas
 INSTALLED_APPS = [
